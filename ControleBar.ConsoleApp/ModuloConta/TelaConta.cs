@@ -63,9 +63,7 @@ namespace ControleBar.ConsoleApp.ModuloConta
 
         public void RealizarPedido()
         {
-            Console.WriteLine("Informe o id da conta: ");
-            int id = Convert.ToInt32(Console.ReadLine());
-            Pedido pedido = repositorioConta.BuscarPorId(id);
+            
         }
     }
 }
