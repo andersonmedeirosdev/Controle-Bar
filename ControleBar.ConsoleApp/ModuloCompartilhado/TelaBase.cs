@@ -89,7 +89,7 @@ namespace ControleBar.ConsoleApp.ModuloCompartilhado
             MostrarMensagem("Registro excluído com sucesso", ConsoleColor.Red);
         }
 
-        public string MostrarMenu()
+        public virtual string MostrarMenu()
         {
             MostrarTexto($"MENU {nomeEntidade}s");
             Console.WriteLine("[1] PARA CADASTRAR");

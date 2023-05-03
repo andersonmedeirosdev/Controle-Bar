@@ -11,20 +11,23 @@ namespace ControleBar.ConsoleApp.ModuloMesa
 {
     public class Mesa : EntidadeBase
     {
-        public bool status;
+        public bool disponivel;
         public string numero;
 
-        public Mesa(bool status, string numero)
+        public Mesa(string numero)
         {
-            this.status = status;
             this.numero = numero;
+            this.disponivel = true;
+        }
+
+        public void AlterarStatusMesa()
+        {
+            this.disponivel = !this.disponivel;
         }
         
         public override void Editar(EntidadeBase entidade)
         {
             Mesa mesa = (Mesa) entidade;
-
-            this.status = mesa.status;
             this.numero = mesa.numero;
         }
     }

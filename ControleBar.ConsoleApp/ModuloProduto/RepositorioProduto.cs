@@ -9,7 +9,7 @@ namespace ControleBar.ConsoleApp.ModuloProduto
 {
     public class RepositorioProduto : RepositorioBase
     {
-        public override EntidadeBase BuscarPorId(int id)
+        public override Produto BuscarPorId(int id)
         {
             return(Produto)base.BuscarPorId(id);
         }

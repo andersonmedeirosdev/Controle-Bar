@@ -21,13 +21,13 @@ namespace ControleBar.ConsoleApp.ModuloMesa
         public override void MostrarTabela(ArrayList registros, bool mostrarCabecalho)
         {
             if (mostrarCabecalho)
-                Console.WriteLine($"{"ID:",-5} | {"STATUS:",-20} | {"NUMERO:",-15}");
+                Console.WriteLine($"{"ID:",-5} | {"DISPONÍVEL:",-20} | {"NUMERO:",-15}");
 
             Console.WriteLine("---------------------------------------------");
 
             foreach (Mesa item in repositorioBase.BuscarTodos())
             {
-                Console.WriteLine($"{item.ObterId(),-5} {item.status,-20} {item.numero,-15}");
+                Console.WriteLine($"{item.ObterId(),-5} {(item.disponivel ? "sim" : "não"),-20} {item.numero,-15}");
             }
 
             Console.ReadLine();
@@ -35,14 +35,12 @@ namespace ControleBar.ConsoleApp.ModuloMesa
 
         public override EntidadeBase ObterRegistro()
         {
-            MostrarTexto("Informe o status da mesa:");
-            bool status = Convert.ToBoolean(Console.ReadLine());
 
             MostrarTexto("Informe o número da mesa:");
             string numero = Console.ReadLine();
 
 
-            return new Mesa(status, numero);
+            return new Mesa(numero);
         }
     }
 }

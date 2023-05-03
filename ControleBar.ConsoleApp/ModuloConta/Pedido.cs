@@ -12,17 +12,15 @@ namespace ControleBar.ConsoleApp.ModuloConta
     {
         public Produto produto;
         public int quantidade;
-        public double total;
 
-        public Pedido(Produto produto, int quantidade, double total)
+        public Pedido(Produto produto, int quantidade)
         {
             this.produto = produto;
             this.quantidade = quantidade;
-            this.total = total;
         }
-        public void CalculoPedido()
+        public double CalculoPedido()
         {
-            total = produto.preco * quantidade;
+            return produto.preco * quantidade;
         }
         public override void Editar(EntidadeBase entidade)
         {

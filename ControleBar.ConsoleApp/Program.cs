@@ -17,7 +17,7 @@ namespace ControleBar.ConsoleApp
             RepositorioMesa repositorioMesa = new RepositorioMesa();
             TelaMesa telaMesa = new TelaMesa(repositorioMesa);
             RepositorioConta repositorioConta = new RepositorioConta();
-            TelaConta telaConta = new TelaConta(repositorioConta, repositorioMesa, repositorioGarcom);
+            TelaConta telaConta = new TelaConta(repositorioConta, repositorioMesa, repositorioGarcom, repositorioProduto);
 
             while(true)
             {
@@ -108,15 +108,19 @@ namespace ControleBar.ConsoleApp
                         }
                         else if (subMenu == "2")
                         {
-                            telaConta.VisualizarRegistros();
+                            telaConta.RealizarPedido();
                         }
                         else if (subMenu == "3")
                         {
-                            telaConta.Editar();
+                            telaConta.VisualizarRegistros();
                         }
                         else if (subMenu == "4")
                         {
-                            telaConta.Excluir();
+                            telaConta.VisualizarFaturamento();
+                        }
+                        else if (subMenu == "5")
+                        {
+                            telaConta.FecharConta();
                         }
                         continue;
                     }
